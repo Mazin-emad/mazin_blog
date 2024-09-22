@@ -1,0 +1,22 @@
+.header_spans span a {
+  padding: 10px 18px;
+  text-decoration: none;
+  color: #d6cece;
+  transition: 0.3s;
+  letter-spacing: 2px;
+}
+.header_spans span:hover a {
+  text-decoration: none;
+  color: #dc3545;
+}
+
+@media (max-width: 760px) {
+  .header_spans span a {
+    letter-spacing: 1px;
+    padding: 10px 8px;
+  }
+}
+
+.header_spans span a:global(.active) {
+  color: #dc3545;
+}

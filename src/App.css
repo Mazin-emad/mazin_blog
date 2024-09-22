@@ -1,0 +1,32 @@
+/* App.css */
+
+/* Reset default styles */
+body {
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Set background color */
+body {
+  background-color: #f2f2f2;
+}
+
+main {
+  min-height: calc(100vh - 132px);
+  margin: 76px 0 0;
+}
+
+.not_found_h3 {
+  font-size: 33px;
+  color: #f7051d;
+  margin: 0;
+  padding: 30px auto;
+  font-weight: 900;
+  font-family: "Roboto", sans-serif;
+}
+.not_found_img {
+  width: 33%;
+  height: 33%;
+  margin: 0;
+  padding: 0;
+}
