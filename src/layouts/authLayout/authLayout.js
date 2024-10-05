@@ -1,19 +1,14 @@
 import React from "react";
-import { Alert } from "react-bootstrap";
 import { Link, Outlet } from "react-router-dom";
 
 const AuthLayout = () => {
   return (
     <>
-      <Alert variant="info" className="text-center">
-        This section will be completed later.. <br />
-        <Link to="../">Go Back</Link>
-      </Alert>
-      <main
-        className="d-flex justify-content-center align-items-center"
-        style={{ minHeight: "80vh" }}
-      >
-        <div className="w-100" style={{ maxWidth: "400px" }}>
+      <nav className="d-flex justify-content-center py-4 align-items-center bg-dark">
+        <Link className="text-light text-decoration-none fw-bold" to="../">Go Back</Link>
+      </nav>
+      <main className="d-flex justify-content-center align-items-center m-0">
+        <div className="w-100">
           <Outlet />
         </div>
       </main>

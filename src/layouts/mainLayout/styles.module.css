@@ -1,18 +1,21 @@
-.header_spans span a {
-  padding: 10px 18px;
+.header_spans span a,
+.header_spans span p {
+  padding: 10px 5px;
   text-decoration: none;
   color: #d6cece;
   transition: 0.3s;
-  letter-spacing: 2px;
+  display: inline;
+  cursor: pointer;
 }
-.header_spans span:hover a {
+.header_spans span:hover a,
+.header_spans span:hover p {
   text-decoration: none;
   color: #dc3545;
 }
 
 @media (max-width: 760px) {
-  .header_spans span a {
-    letter-spacing: 1px;
+  .header_spans span a,
+  .header_spans span p {
     padding: 10px 8px;
   }
 }

@@ -6,7 +6,6 @@ import { PostsContext } from "../../contexts/postsContext";
 
 const LastPosts = () => {
   const navigator = useNavigate();
-
   const { fetch, data, loading, error } = useContext(PostsContext);
 
   const isMount = useRef(true);
@@ -15,21 +14,21 @@ const LastPosts = () => {
       fetch();
       isMount.current = false;
     }
-  }, []);
+  }, [fetch]);
 
   return (
     <Container className="py-5">
       <h2 className="mb-4 text-center">Latest Articles</h2>
       <div className="text-center">
         {loading ? (
-          <p>
+          <div>
             <Spinner animation="border" /> Loading...
-          </p>
+          </div>
         ) : null}
         {error ? (
-          <p>
+          <div>
             <Alert variant="danger"> {error}</Alert>
-          </p>
+          </div>
         ) : null}
       </div>
       {(!loading || !error) && data && data.length ? (

@@ -40,10 +40,10 @@ const ArticlePage = () => {
 
       <div className="text-center">
         {loading ? (
-          <p>
+          <div>
             <Spinner animation="border" />
             Loading...
-          </p>
+          </div>
         ) : error ? (
           <p>
             <Alert variant="danger"> {error} </Alert>
