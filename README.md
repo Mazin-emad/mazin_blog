@@ -2,7 +2,7 @@
 
 This is a blog application built with **ReactJS** and **Firebase**. The project utilizes **React-Bootstrap** and **styled-components** for styling to create a responsive and modern UI.
 
-## Live Demo ==> https://mazin_blog.surge.sh/
+## Live Demo ==> https://mazin-blog.netlify.app
 
 ## Features
 
