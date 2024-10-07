@@ -27,10 +27,11 @@ const ArticlePage = () => {
       { rootMargin: "0px 0px 300px 0px" }
     );
 
-    if (blogObserverRef.current) observer.observe(blogObserverRef.current);
+    const currentRef = blogObserverRef.current;
+    if (currentRef) observer.observe(currentRef);
 
     return () => {
-      if (blogObserverRef.current) observer.unobserve(blogObserverRef.current);
+      if (currentRef) observer.unobserve(currentRef);
     };
   }, [blogObserverRef, data, fetchNext]);
 
