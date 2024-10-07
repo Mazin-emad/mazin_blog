@@ -40,7 +40,7 @@ const useFetchCol = (colName) => {
       setError(err.message);
     }
     setLoading(false);
-  }, []);
+  }, [colName, db]);
 
   const getNextData = useCallback(async (latestData) => {
     setFetching(true);
@@ -70,7 +70,7 @@ const useFetchCol = (colName) => {
       setError(err.message);
     }
     setFetching(false);
-  }, []);
+  }, [colName, db]);
 
   return { loading, error, data, getData, getNextData, fetching, lastDoc };
 };

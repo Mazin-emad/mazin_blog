@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.2b5b95ee.css",
+    "main.js": "/static/js/main.eb6c7dde.js",
+    "static/media/Mazin_Blog.avif": "/static/media/Mazin_Blog.3bf50b0cde6ee780da8c.avif",
+    "static/media/not-found.png": "/static/media/not-found.0cebfc4b1ef6f9ac1019.png",
+    "static/media/logo.png": "/static/media/logo.faf8b4349ae033955c96.png",
+    "index.html": "/index.html",
+    "main.2b5b95ee.css.map": "/static/css/main.2b5b95ee.css.map",
+    "main.eb6c7dde.js.map": "/static/js/main.eb6c7dde.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2b5b95ee.css",
+    "static/js/main.eb6c7dde.js"
+  ]
+}

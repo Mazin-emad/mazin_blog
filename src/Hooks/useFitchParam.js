@@ -34,7 +34,7 @@ const useFitchParam = (colName, slug) => {
     }
 
     setLoading(false);
-  }, []);
+  }, [colName, db, slug]);
 
   return { loading, error, data, getData };
 };
