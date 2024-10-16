@@ -19,16 +19,16 @@ const NewPostPage = () => {
   const formik = useFormik({
     validateOnMount: true,
     initialValues: {
-      title: '',
-      excert: '',
-      url: '',
-      body: ''
+      title: "",
+      excert: "",
+      url: "",
+      body: "",
     },
     validationSchema: Yup.object().shape({
       title: Yup.string().min(3).max(35).required(),
       excert: Yup.string().min(17).required(),
       url: Yup.string().url("this must be a valid URL"),
-      body: Yup.string().min(50).required()
+      body: Yup.string().min(50).required(),
     }),
     onSubmit: async (values) => {
       if (formik.isValid) {
@@ -57,11 +57,8 @@ const NewPostPage = () => {
         setLoading(false);
         navigate("/articles/" + slug);
       }
-    }
+    },
   });
-
-    ;
-
   return (
     <section className="py-5">
       <Container>
@@ -81,7 +78,9 @@ const NewPostPage = () => {
                   onChange={formik.handleChange}
                 />
                 {formik.errors.title && formik.touched.title ? (
-                  <Form.Text className="text-danger">{formik.errors.title}</Form.Text>
+                  <Form.Text className="text-danger">
+                    {formik.errors.title}
+                  </Form.Text>
                 ) : null}
               </Form.Group>
 
@@ -97,7 +96,9 @@ const NewPostPage = () => {
                   onChange={formik.handleChange}
                 />
                 {formik.errors.excert && formik.touched.excert ? (
-                  <Form.Text className="text-danger">{formik.errors.excert}</Form.Text>
+                  <Form.Text className="text-danger">
+                    {formik.errors.excert}
+                  </Form.Text>
                 ) : null}
               </Form.Group>
 
@@ -115,19 +116,27 @@ const NewPostPage = () => {
                   onChange={formik.handleChange}
                 />
                 {formik.errors.url && formik.touched.url ? (
-                  <Form.Text className="text-danger">{formik.errors.url}</Form.Text>
+                  <Form.Text className="text-danger">
+                    {formik.errors.url}
+                  </Form.Text>
                 ) : null}
               </Form.Group>
 
               <ReactQuill
                 theme="snow"
-                onBlur={()=>formik.setFieldTouched('body', true)}
-                onChange={(content) => formik.setFieldValue('body', content)}
+                onBlur={() => formik.setFieldTouched("body", true)}
+                onChange={(content) => formik.setFieldValue("body", content)}
               />
               {formik.errors.body && formik.touched.body ? (
-                <Form.Text className="text-danger">{formik.errors.body}</Form.Text>
+                <Form.Text className="text-danger">
+                  {formik.errors.body}
+                </Form.Text>
               ) : null}
-              <Button variant="danger" type="submit" className={`mt-4 w-100 ${loading ? 'disabled' : ''}`}>
+              <Button
+                variant="danger"
+                type="submit"
+                className={`mt-4 w-100 ${loading ? "disabled" : ""}`}
+              >
                 Submit {loading && "..."}
               </Button>
             </Form>

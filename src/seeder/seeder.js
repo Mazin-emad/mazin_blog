@@ -1,5 +1,3 @@
-
-
 // this file is used to seed the firestore database with some dummy data
 // to use it, you need to run the seedPosts function in any file in the project
 
