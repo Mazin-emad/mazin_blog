@@ -1,27 +1,27 @@
-import { createContext, useContext, useEffect, useState } from 'react';
-import { FirestoreContext } from './firestoreContext';
+import { createContext, useContext, useEffect, useState } from "react";
+import { FirestoreContext } from "./firestoreContext";
 import {
-	createUserWithEmailAndPassword,
-	getAuth,
-	onAuthStateChanged,
-	signInWithEmailAndPassword,
-	signOut,
-  updateProfile
-} from 'firebase/auth';
+  createUserWithEmailAndPassword,
+  getAuth,
+  onAuthStateChanged,
+  signInWithEmailAndPassword,
+  signOut,
+  updateProfile,
+} from "firebase/auth";
 
 const AuthContext = createContext();
 
 export function useAuth() {
   if (!AuthContext) {
-    throw new Error('useAuth must be used within an AuthProvider');
+    throw new Error("useAuth must be used within an AuthProvider");
   }
   return useContext(AuthContext);
 }
 
 const AuthProvider = ({ children }) => {
-	const { app } = useContext(FirestoreContext);
-	const auth = getAuth(app);
-	const [ user, setUser ] = useState({});
+  const { app } = useContext(FirestoreContext);
+  const auth = getAuth(app);
+  const [user, setUser] = useState({});
   const [displayName, setDisplayName] = useState(null);
   const [err, setErr] = useState(null);
 
@@ -36,31 +36,41 @@ const AuthProvider = ({ children }) => {
     };
   }, [auth]);
 
-	const createNewUser = (pass, email) => {
-    return createUserWithEmailAndPassword(auth, email, pass)
-	};
+  const createNewUser = (pass, email) => {
+    return createUserWithEmailAndPassword(auth, email, pass);
+  };
 
-  const setUserName = (name) =>{
+  const setUserName = (name) => {
     setDisplayName(name);
-    return updateProfile(auth.currentUser,{ displayName: name})
-  }
+    return updateProfile(auth.currentUser, { displayName: name });
+  };
 
-	const signInWithEmailPass = (pass, email) => {
-		return signInWithEmailAndPassword(auth, email, pass);
-	};
+  const signInWithEmailPass = (pass, email) => {
+    return signInWithEmailAndPassword(auth, email, pass);
+  };
 
-	const logOut = async () => {
+  const logOut = async () => {
     setErr(null);
-		try {
-			await signOut(auth);
-		} catch (error) {
+    try {
+      await signOut(auth);
+    } catch (error) {
       setErr(error.message);
     }
-	}
+  };
 
   return (
-    <AuthContext.Provider value={{ displayName,signInWithEmailPass, setUserName, createNewUser, isAuth: !!user, err, logOut }}>
-      { children}
+    <AuthContext.Provider
+      value={{
+        displayName,
+        signInWithEmailPass,
+        setUserName,
+        createNewUser,
+        isAuth: !!user,
+        err,
+        logOut,
+      }}
+    >
+      {children}
     </AuthContext.Provider>
   );
 };

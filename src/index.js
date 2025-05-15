@@ -13,9 +13,9 @@ root.render(
     <FirestoreProvider>
       <PostsProvider>
         <AuthProvider>
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
         </AuthProvider>
       </PostsProvider>
     </FirestoreProvider>
