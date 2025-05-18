@@ -6,7 +6,7 @@ This is a blog application built with **ReactJS** and **Firebase**. The project 
 
 ## Features
 
-- **C&R Operations**: Users can create, read blog posts. (edit &  )
+- **C&R Operations**: Users can create, read blog posts. (edit & delete coming soon)
 - **Responsive Design**: The application is fully responsive and adapts to various screen sizes.
 - **Real-time Data**: Blog posts and comments are stored and retrieved from Firebase in real-time.
 - **Styled with React-Bootstrap**: For consistent and mobile-friendly design.
